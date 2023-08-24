@@ -8,6 +8,7 @@ import APage from "./pages/APage/APage";
 import BPage from "./pages/BPage/BPage";
 import { useState } from "react";
 import CPage from "./pages/CPage/CPage";
+import Principal from "./Components/Principal/Principal";
 
 const SHeader = css`
   display: flex;
@@ -79,6 +80,7 @@ function App() {
               <Route path="/a" element={ <APage /> } />
               <Route path="/b" element={ <BPage setHeader={setHeader}/> } />
               <Route path="/c" element={ <CPage /> } />
+              <Route path="/principal" element={ <Principal /> }/>
             </Routes>
         </div>
       </div>
