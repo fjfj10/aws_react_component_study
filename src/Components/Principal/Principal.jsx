@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import P1 from './P1/P1';
+import { useRecoilState } from 'recoil';
+import { principalState } from '../../store/principalStore';
 
 const SContainer = css`
     display: flex;
@@ -14,7 +16,15 @@ const SContainer = css`
 `;
 
 function Principal(props) {
+    const [ principal, setPrincipal ] = useRecoilState(principalState);
     const [ num, setNum ] = useState(0);
+
+    useEffect(() => {
+        setPrincipal({
+            ...principal,
+            userName: "abcdef"
+        })
+    }, []);
 
     return (
         <div css={SContainer}>
